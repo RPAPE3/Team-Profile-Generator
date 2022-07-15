@@ -120,7 +120,7 @@ function intern() {
 
 function writeToFile(managerEmp, engineerEmp, internEmp) {
     console.log(managerEmp, engineerEmp, internEmp);
-    fs.writeFile("index.html", data(managerEmp, engineerEmp, internEmp), (err) => (err) ? console.log("Error with generating a README") : console.log("Success! README generated"))
+    fs.writeFile("./dist/index.html", data(managerEmp, engineerEmp, internEmp), (err) => (err) ? console.log("Error with generating a README") : console.log("Success! README generated"))
 };
 
 start();
