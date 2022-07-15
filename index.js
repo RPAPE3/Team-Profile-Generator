@@ -12,7 +12,7 @@ const Intern = require('./lib/Intern');
 
 const questions = [
     {
-      message: 'What is your Team Managers name?',
+      message: 'What is your name?',
       name: 'name',
     },
     {
@@ -79,11 +79,8 @@ const internAry = [
 
 function start() {
     inquirer.prompt(questions)
-    .then((managerData) => {
-        // console.log(managerData)
-        managerEmp.push(new Manager (managerData))
-        // console.log(managerEmp[0])
-        // testIt();
+    .then(({name, id, email, officeNumber}) => {
+        managerEmp.push(new Manager (name, id, email, officeNumber))
         moveOn();
     })
 };
@@ -104,16 +101,16 @@ function moveOn() {
 
 function engineer() {
     inquirer.prompt(engineerAry)
-    .then((engineerData) => {
-        engineerEmp.push(new Engineer (engineerData));
+    .then(({name, id, email, github}) => {
+        engineerEmp.push(new Engineer (name, id, email, github));
         moveOn();
     })
 };
 
 function intern() {
     inquirer.prompt(internAry)
-    .then((internData) => {
-        internEmp.push(new Intern (internData));
+    .then(({name, id, email, school}) => {
+        internEmp.push(new Intern (name, id, email, school));
         moveOn();
     })
 };
